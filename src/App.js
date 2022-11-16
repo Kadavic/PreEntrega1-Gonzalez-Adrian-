@@ -1,11 +1,15 @@
 
 import './App.css';
 import Footer from './components/Footer';
+import NavBar from './components/NavBar/NavBar';
 
 function App() {
   return (
+    
     <div className="App">
-      <h1>Hola Mundo!</h1>
+      
+      
+      <NavBar/>
       <Footer/>
     </div>
   );
