@@ -3,7 +3,7 @@ import CartWidget from './CartWidget'
 
 const NavBar = () => {
   return (
-    <div className="navbar bg-base-100 bg-neutral-focus">
+    <div className="navbar  bg-neutral-focus">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-3xl">Game Shop</a>
       </div>
