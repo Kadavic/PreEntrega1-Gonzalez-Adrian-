@@ -3,9 +3,9 @@ import ItemCount from './ItemCount'
 
 const ItemListContainer = ({greeting}) => {
   return (<>
-            <div className='text-white-700 text-2xl flex-auto'>{greeting}</div>
+            <div className='text-white-700 text-2xl'>{greeting}</div>
             <div>
-            <ItemCount stock={10}/>
+            <ItemCount stock={5} initial={1}/>
             </div>
           </>
     

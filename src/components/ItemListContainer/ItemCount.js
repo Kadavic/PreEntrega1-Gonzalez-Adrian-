@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
+import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid'
 
-const ItemCount = ({stock}) => {
+const ItemCount = ({stock, initial}) => {
     const[count,setCount] = useState(0)
     useEffect( () => {                          
         console.log("Se hizo render")
@@ -10,7 +11,7 @@ const ItemCount = ({stock}) => {
     useEffect( () => {
         console.log("Este efecto solo en montaje")
     },[])
-
+    
     function agregarAlContador(){
         console.log("se hizo click")
         count === stock ? <button disable={true}></button> : setCount(count+1)
@@ -18,24 +19,33 @@ const ItemCount = ({stock}) => {
 
     function quitarAlContador(){
         console.log("se hizo click")
-        count < 1  ? <button disable={true}></button> : setCount(count-1)
+        count < initial  ? <button disable={true}></button> : setCount(count-1)
+    }
+
+    function onAdd(){
+        
     }
   return (
-    <div>
-        <div className="btn-group">
-            <button className="btn" onClick={quitarAlContador}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
-                </svg>
-            </button>
-            <button type="button" class="px-8 py-3 text-white bg-gray-600  focus:outline-none disabled:opacity-100 " disabled>
-                <p className="text-slate-50 font-semibold ">{count}</p>
-            </button>
-            <button className="btn"onClick={agregarAlContador}>
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
-                </svg>
-            </button>
+    <div className='flex items-center justify-center mt-5'>
+        <div className='p-5 border border-cyan-900 rounded-lg border-4  bg-info-content'>
+            <div className="btn-group flex items-center justify-center p-5">
+                <button className="btn" onClick={quitarAlContador}>
+                <MinusSmallIcon className="h-6 w-6 text-white-500"/>
+                </button>
+
+                <button type="button" class="px-8 py-3 text-white bg-gray-600  focus:outline-none disabled:opacity-100 " disabled>
+                    <p className="text-slate-50 font-semibold ">{count}</p>
+                </button>
+
+                <button className="btn"onClick={agregarAlContador}>
+                <PlusSmallIcon className='h-6 w-6 text-white-500'/>
+                </button>
+            </div>
+            <div className='flex items-center justify-center  '>
+                <button className='btn' onClick={onAdd}>
+                    Agregar al carrito
+                </button>
+            </div>
         </div>
     </div>
   )

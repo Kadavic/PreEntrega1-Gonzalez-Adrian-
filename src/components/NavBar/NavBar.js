@@ -3,11 +3,11 @@ import CartWidget from './CartWidget'
 
 const NavBar = () => {
   return (
-    <div className="navbar  bg-neutral-focus">
-      <div className="flex-1">
-        <a className="btn btn-ghost normal-case text-3xl">Game Shop</a>
+    <div className="navbar  bg-neutral-focus  flex items-center justify-between">
+      <div className='flex-1'>
+        <a className="btn btn-ghost normal-case text-3xl ">Game Shop</a>
       </div>
-      <div className='flex-auto'>
+      <div className='shrink-0'>
           <ul className="menu menu-horizontal p-0 bg-base-300 font-bold rounded-lg">
             <li><a>Juegos</a></li>
             <li tabIndex={0}>
@@ -27,7 +27,7 @@ const NavBar = () => {
             <li><a>Ofertas</a></li>
           </ul>
       </div>
-      <div className='flex-none'>
+      <div className='flex-1'>
       <CartWidget/>
       </div>
        
