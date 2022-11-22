@@ -4,15 +4,15 @@ import { useState } from 'react'
 const ItemCount = ({stock}) => {
     const[count,setCount] = useState(0)
     function agregarAlContador(){
-        {count === stock ? <button disable={true}></button> : setCount(count+1)}
+        count === stock ? <button disable={true}></button> : setCount(count+1)
     }
     function quitarAlContador(){
-        {count < 1  ? <button disable={true}></button> : setCount(count-1)}
+        count < 1  ? <button disable={true}></button> : setCount(count-1)
     }
   return (
     <div>
-        <div className="btn-group grid grid-cols-2">
-            <button className="btn " onClick={quitarAlContador}>
+        <div className="btn-group">
+            <button className="btn" onClick={quitarAlContador}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-6 h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 12h-15" />
                 </svg>
@@ -29,5 +29,4 @@ const ItemCount = ({stock}) => {
     </div>
   )
 }
-
 export default ItemCount
