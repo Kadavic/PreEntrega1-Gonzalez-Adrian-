@@ -26,8 +26,8 @@ const ItemCount = ({stock, initial}) => {
         
     }
   return (
-    <div className='flex items-center justify-center mt-5'>
-        <div className='p-5 border border-cyan-900 rounded-lg border-4  bg-info-content'>
+    <div className='flex items-center justify-center mt-5 '>
+        <div className='p-5 border-y-4 border-cyan-900   bg-info-content'>
             <div className="btn-group flex items-center justify-center p-5">
                 <button className="btn" onClick={quitarAlContador}>
                 <MinusSmallIcon className="h-6 w-6 text-white-500"/>

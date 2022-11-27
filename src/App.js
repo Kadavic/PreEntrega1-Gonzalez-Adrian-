@@ -4,6 +4,7 @@ import Footer from './components/Footer';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
 import NavBar from './components/NavBar/NavBar';
 
+
 function App() {
   return (
     
@@ -11,8 +12,9 @@ function App() {
       
       
       <NavBar/>
-      <ItemListContainer greeting={'Juegos'}/>
-      
+      <div className='mb-10'>
+        <ItemListContainer greeting={'Games'}/>
+      </div>
       <Footer/>
     </div>
   );
