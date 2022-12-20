@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { MinusSmallIcon, PlusSmallIcon } from '@heroicons/react/24/solid'
 
-const ItemCount = ({stock, initial}) => {
+const ItemCount = ({stock, initial, onAdd}) => {
     const[count,setCount] = useState(0)
+    
     useEffect( () => {                          
         console.log("Se hizo render")
     })
@@ -22,9 +23,7 @@ const ItemCount = ({stock, initial}) => {
         count < initial  ? <button disable={true}></button> : setCount(count-1)
     }
 
-    function onAdd(){
-        
-    }
+    
   return (
     <div className='flex items-center justify-center mt-5 '>
         <div className='p-5 border-y-4 border-zinc-800   bg-zinc-700'>
@@ -42,7 +41,7 @@ const ItemCount = ({stock, initial}) => {
                 </button>
             </div>
             <div className='flex items-center justify-center  '>
-                <button className='btn' onClick={onAdd}>
+                <button className='btn' onClick={() => onAdd(count)}>
                     Agregar al carrito
                 </button>
             </div>

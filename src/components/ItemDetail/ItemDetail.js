@@ -1,10 +1,19 @@
 import React, { useState } from 'react'
+
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import {useCartContext } from '../../Context/CartContext'
 import { catalogo } from '../data/Catalogo'
 import ItemCount from '../ItemListContainer/ItemCount'
 
+
+
 const ItemDetail = () => {
+
+  const {addNewProduct} = useCartContext()
+  
+
+
     const [item, setItem] = useState({})
     const {id} = useParams()
     useEffect(() => {
@@ -21,6 +30,12 @@ const ItemDetail = () => {
             }, 500);
         })
     }
+    function onAdd(quantity){
+      const newProduct = {...item, quantity}
+      addNewProduct(newProduct)
+        
+        
+    }
   return (
     <div>
         <div className="card grid grid-cols-3 place-content-center card-side bg-zinc-900 shadow-xl p-5 m-5">
@@ -29,7 +44,7 @@ const ItemDetail = () => {
             <h2 className="card-title">{item.nombre}</h2>
             <p>{item.detalles}</p>
             <div className="card-actions justify-center">
-              <ItemCount stock={item.stock} initial={1}/>
+              <ItemCount stock={item.stock} initial={1} onAdd={onAdd}/>
             </div>
           </div>
         </div>
