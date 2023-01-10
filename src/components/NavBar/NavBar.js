@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { useEffect } from 'react'
 import { Link, useParams } from 'react-router-dom'
+import CartContext from '../../Context/CartContext'
 import { catalogo } from '../data/Catalogo'
 import CartWidget from './CartWidget'
 
