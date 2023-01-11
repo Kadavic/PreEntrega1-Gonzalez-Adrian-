@@ -21,7 +21,7 @@ const Item = ({nombre,img,categoria,precio,id}) => {
         
         
         <div className="card-actions justify-end">
-          <div className="badge badge-outline bg-cyan text-white">{categoria[0]}</div> 
+          <div className="badge badge-outline bg-cyan text-white">{categoria}</div> 
           <div className="badge badge-outline bg-cyan text-white">USD {precio}</div> 
           
         </div>

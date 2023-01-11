@@ -32,7 +32,7 @@ const NavBar = () => {
               
             </li>
             
-            <li><a href=''>Ofertas</a></li>
+            
           </ul>
       </div>
       <div className='flex-1'>
