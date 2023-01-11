@@ -10,15 +10,6 @@ import { useCartContext } from '../../Context/CartContext'
 const Checkout = () => {
     const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i
     const telephoneRegex = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{1,6}$/im
-    const styles = {
-        title: "font-medium text-lg text-gray-800 tracking-wider leading-tight uppercase",
-        text: "font-light text-sm text-gray-600 tracking-wide leading-normal",
-        highlight: "font-medium text-xs text-gray-700 tracking-wider leading-loose uppercase",
-        button: "font-medium text-xxs text-gray-700 tracking-wider leading-normal uppercase select-none",
-        symbol: "focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-800 cursor-pointer text-gray-400 border border-gray-400 w-7 h-7 flex items-center justify-center p-0.5",
-        counter: "border border-x-1 border-x-white border-y-gray-400 text-gray-600 h-full text-center w-5 p-0.5"
-    }
-
 
     const{cart, totalPrecioCarrito,totalProductosCarrito,emptyCart } = useCartContext()
     const [idCompra, setIdCompra] = useState("")
@@ -34,6 +25,7 @@ const Checkout = () => {
     const handleSubmitChange = (e) => {
         setBuyer({ ...buyer, [e.target.name]: e.target.value })
     }
+    
     const orderDate = new Date().toLocaleDateString()
 
     function orderHandler() {
