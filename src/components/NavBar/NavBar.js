@@ -23,11 +23,11 @@ const NavBar = () => {
                 <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
               </Link>
               <ul style={{zIndex:1}} className="p-2 bg-base-100 bg-base-200 rounded-sm ">
-                <li><Link to={`/category/Horror`} >Horror</Link></li>
-                <li><Link to={`/category/Arcade`} >Arcade</Link></li>
-                <li><Link to={`/category/Space`} >Space</Link></li>
-                <li><Link to={`/category/Adventure`} >Adventure</Link></li>
-                <li><Link to={`/category/Indie`} >Indie</Link></li>
+                <li><Link to={`/category/horror`} >Horror</Link></li>
+                <li><Link to={`/category/arcade`} >Arcade</Link></li>
+                <li><Link to={`/category/space`} >Space</Link></li>
+                <li><Link to={`/category/adventure`} >Adventure</Link></li>
+                <li><Link to={`/category/indie`} >Indie</Link></li>
               </ul>
               
             </li>

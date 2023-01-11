@@ -1,3 +1,4 @@
+import { collection, getDocs, getFirestore } from 'firebase/firestore'
 import React, { useState } from 'react'
 
 import { useEffect } from 'react'
@@ -15,25 +16,26 @@ const ItemDetail = () => {
   const [loading, setLoading] = useState(false)
   const {id} = useParams()
   
+  
     useEffect(() => {
       getItemDetail().then( res => {
         setItem(res)
       })
     }, [id])
     
-    const getItemDetail = () => {
-        return new Promise((resolve,reject) => {
-            const item =catalogo.find(p => p.id == id)
-            setTimeout(() => {
-                resolve(item)
-                setLoading(true)
-                
-            }, 500);
-        })
+    const getItemDetail = async () => {
+       const db = getFirestore()
+       const collectionRef = collection(db,'Catalogo')
+       const snapshot= await getDocs(collectionRef)
+       setTimeout(() => {
+        setItem(snapshot.docs.find(p => p.id == id).data())
+        setLoading(true)
+       }, 100);
     }
 
     function onAdd(quantity){
-      const newProduct = {...item, quantity}
+      const newProduct = {...item, quantity, id}
+      console.log(newProduct)
       addNewProduct(newProduct)
     }
 
